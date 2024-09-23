@@ -12,4 +12,4 @@ langchain-groq
 openpyxl
 st-gsheets-connection
 pyairtable
-PdfReader
+PyPDF2
