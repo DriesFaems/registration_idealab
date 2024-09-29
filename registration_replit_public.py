@@ -95,22 +95,12 @@ if submit_form and not st.session_state.goals_processed:
         st.session_state.goals = identify_goals.output.exported_output
         st.session_state.goals_processed = True
 
-        # Display identified skills in a text area for user adjustment
-
-        with st.form("adjust_goals_form"):
-            adjusted_goals = st.text_area("Please review and adjust the networking goals below:", value=st.session_state.goals)
-            save_adjusted_goals = st.form_submit_button("Save Adjusted Networking Goals")
-
-        if save_adjusted_goals:
-            st.session_state.goals = adjusted_goals
-            st.write("Adjusted Networking Goal Saved:")
-            st.write(st.session_state.goals)
-            st.markdown("**Registration successful. You can now leave the registration.**")
+        
     else:
         st.error("Please upload a PDF file.")
 
 # If skills have already been processed, allow adjustment without re-running the agents
-elif st.session_state.goals_processed:
+if st.session_state.goals_processed:
     with st.form("adjust_goals_form"):
         adjusted_goals = st.text_area("Please review and adjust the identified goals below:", value=st.session_state.goals)
         save_adjusted_goals = st.form_submit_button("Save Adjusted Networking Goals")
