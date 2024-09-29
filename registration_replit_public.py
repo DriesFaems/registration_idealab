@@ -32,11 +32,11 @@ st.image("Screenshot (1497).png", width=600)
 # Create title for WHU MBA Streamlit App
 st.title("Registration Buddy Matching")
 
-st.write("Welcome to the registration form for the Buddy Matching during Idealab. The information you provide will be used to identify some interesting people, who also attend the Idealab conference and who can help you in realizing your networking goals. At the beginning of Idealab, we will send you a document that will contain the names of the people with whom you are matched.") 
+st.write("Welcome to the registration form for the Buddy Matching during IdeaLab!. The information you provide will be used to identify some interesting people, who also attend the Idealab conference and who can help you in realizing your networking goals. At the beginning of Idealab, we will send you a document that will contain the names of the people with whom you are matched.") 
          
 st.markdown("**Please execute the following steps**")
 st.write("Step 1: Fill in the form below to register for the event and upload your LinkedIn profile.")
-st.write("Step 2: Based on your LinkedIn profile, the application will give you a first suggestion of networking goals that could be relevant for you during Idealab. You can review and adjust these suggestions to your preference.")
+st.write("Step 2: Based on your LinkedIn profile, the application will give you a first suggestion of networking goals that could be relevant for you during IdeaLab!. You can review and adjust these suggestions to your preference.")
 st.write("Step 3: After you have adjusted the networking goals, you need to click on Save Adjusted Networking Goals. This will end the registration process")
 
 text = ""
@@ -46,7 +46,7 @@ with st.form("registration_form"):
     name = st.text_input("Please enter your first name and last name")
     email = st.text_input("Please enter your email address (we will send the document with matched buddies to this email address)")
     # user needs to indicate with yes or no if they are a student
-    uploaded_file = st.file_uploader("Please upload a PDF of your LinkedIn profile. You can find this PDF by going to your LinkedIn profile page, click on More, and click on Save PDF. By uploading the file, you agree that we use and store your LinkedIn profile for the purpose of matching durng IdeaLab.", type="pdf")
+    uploaded_file = st.file_uploader("Please upload a PDF of your LinkedIn profile. You can find this PDF by going to your LinkedIn profile page, click on More, and click on Save PDF. By uploading the file, you agree that we use and store your LinkedIn profile for the purpose of matching during IdeaLab!", type="pdf")
     submit_form = st.form_submit_button("Submit")
 
 # If the form is submitted
@@ -68,7 +68,7 @@ if submit_form and not st.session_state.goals_processed:
             goal=f"""Identify core networking objectives based on the LinkedIn profile.""", 
             backstory=f"""You are a great expert in helping people to identify which goals and objectives they should pursue during networking events. 
             You have been trained to rely on the LinkedIn profile of persosn to formulate specific networking goals during 
-            Idealab, which is a networking event for students, founders and investors who share interest in the topic of entrepreneurship""",  
+            IdeaLab, which is a networking event for students, founders and investors who share interest in the topic of entrepreneurship""",  
             verbose=True,
             llm=GROQ_LLM,
             allow_delegation=False,
